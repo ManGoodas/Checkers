@@ -36,9 +36,16 @@ public class Checkers {
         
         while(vyksta){
         try{
-            outer:   
+        for(int clear = 0; clear < 1000; clear++)
+        {
+           System.out.println("\b") ;
+        }    
+        //clearScreen();
+        System.out.print("    1   2   3   4   5   6   7   8\n");
           for (int i = 0;i<=7;i++){
+            System.out.print(i+1 + " ");
             for(int j = 0;j<=7;j++){
+               System.out.print("|");
                if (map[i][j] == 0) {
                    System.out.print("(E)");
                }
@@ -59,8 +66,10 @@ public class Checkers {
                }
             }
             System.out.print('\n');
+            //System.out.print("  ________________________________\n");
+            System.out.print("  --------------------------------\n");
             }
-                    
+            System.out.print("\n");
             if (ejimas == false) {
                 System.out.print("1 zaidejo eile(R).\n");
             } else {
@@ -206,12 +215,12 @@ public class Checkers {
                     juod = juod +1;
             }
         }
-        if (raud == 0) {
+        if ((raud == 0) || (raud == 1)) {
            System.out.print("2 ZAIDEJAS LAIMEJO\n");
            System.out.print("GAMEOVER\n");
            vyksta = false;
         }
-        else if (juod == 0) {
+        else if ((juod == 0) || (juod == 1)) {
            System.out.print("1 ZAIDEJAS LAIMEJO\n");
            System.out.print("GAMEOVER\n");
            vyksta = false;
@@ -226,6 +235,11 @@ public class Checkers {
            System.out.println("Ivyko klaida");}    
         
         }
+    }
+    
+    public static void clearScreen() {  
+    System.out.print("\033[H\033[2J");  
+    System.out.flush();  
     }
        
     
