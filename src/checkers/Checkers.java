@@ -209,13 +209,18 @@ public class Checkers {
         if (raud == 0) {
            System.out.print("2 ZAIDEJAS LAIMEJO\n");
            System.out.print("GAMEOVER\n");
+           vyksta = false;
         }
         else if (juod == 0) {
            System.out.print("1 ZAIDEJAS LAIMEJO\n");
            System.out.print("GAMEOVER\n");
+           vyksta = false;
         }
-        
-        
+        else if ((raud == 1) && (juod == 1)) {
+           System.out.print("LYGIOSIOS\n");
+           System.out.print("GAMEOVER\n"); 
+           vyksta = false; 
+        }
         }    
         catch(Exception e){
            System.out.println("Ivyko klaida");}    
